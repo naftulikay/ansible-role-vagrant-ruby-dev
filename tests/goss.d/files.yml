@@ -1,0 +1,20 @@
+---
+file:
+  '/etc/profile.d/rbenv.sh':
+    exists: true
+    contains:
+      # check for rbenv root being set
+      - /export RBENV_ROOT=\"\$HOME/\.rbenv\"/
+      # check for path modifications
+      - /export PATH=\"\$RBENV_ROOT/bin\:\$PATH\"/
+      # check for init
+      - /\$\(rbenv init \-\)/
+
+    '/etc/profile.d/vagrant.sh':
+      exists: true
+      contains:
+        # check for magic cd
+        - /cd ['"]?/vagrant['"]?/
+
+  '/home/vagrant/.rbenv': { exists: true }
+  '/home/vagrant/.rbenv/versions/2.4.1': { exists: true }
