@@ -21,7 +21,7 @@ env:
     - IMAGE_NAME: naftulikay/trusty-vm:latest
 
 install: pip install -r requirements.txt
-script: make test-clean
+script: travis-pls make test-clean
 
 notifications:
   email: { on_success: never, on_failure: never }
