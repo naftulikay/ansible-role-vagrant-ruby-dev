@@ -6,6 +6,7 @@
   tasks:
     - name: create user
       user: name={{ container_user }} comment="Container User" state=present
+    - file: path=/vagrant state=directory mode=0755 owner={{ container_user }} group={{ container_user }}
 
 - name: build
   hosts: localhost
