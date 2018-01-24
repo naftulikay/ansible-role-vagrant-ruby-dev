@@ -1,7 +1,13 @@
 ---
 command:
+  # executing ruby version should return the specified ruby version
+  'sudo -Hiu vagrant ruby --version':
+    exit-status: 0
+    stdout:
+      - 2.4.1
+
   # executing rbenv version should return the specified ruby version
-  'sudo -Hiu vagrant /home/vagrant/.rbenv/shims/ruby --version':
+  'sudo -Hiu vagrant rbenv version':
     exit-status: 0
     stdout:
       - 2.4.1
