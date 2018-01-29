@@ -6,7 +6,7 @@ file:
       # check for rbenv root being set
       - /export RBENV_ROOT=\"\$HOME/\.rbenv\"/
       # check for path modifications
-      - export PATH="$HOME/.rbenv/bin:$PATH"
+      - export PATH="$RBENV_ROOT/bin:$PATH"
       # check for init
       - /\$\(rbenv init \-\)/
 
